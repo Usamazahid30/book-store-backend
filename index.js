@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://book-store-backend-lyart.vercel.app/",
+      "https://book-store-kappa-orpin.vercel.app",
     ],
     credentials: true,
   })
@@ -29,11 +29,11 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/auth", userRoutes);
 app.use("/api/admin", adminRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Book Store Server is running!");
+});
 async function main() {
   await mongoose.connect(process.env.DB_URL);
-  app.get("/", (req, res) => {
-    res.send("Book Store Server is running!");
-  });
 }
 
 main()
