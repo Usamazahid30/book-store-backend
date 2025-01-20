@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://book-store-kappa-orpin.vercel.app",
+      "https://book-store-backend-lyart.vercel.app/",
     ],
     credentials: true,
   })
